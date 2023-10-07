@@ -3,19 +3,11 @@
 
 <router-outlet></router-outlet>
 
-<ul>
-    <li>Item 1 - {{description1}}</li>
-    <li>Item 2</li>
+<ul *ngFor="let value of values">
+    <li>{{value.id}} - {{value.name}} - {{value.description}}</li>
 </ul>
 
-<label>Name</label>
-<br>
-<input [(ngModel)]="value.name" />
 
-<label>Description</label>
-<br>
-<input [(ngModel)]="value.description" />
-<br>
 <div *ngIf="isVipClient; else NotVipClient">
     <h1>Gratz! You are a vip client!</h1>
 </div>
@@ -23,5 +15,17 @@
 <ng-template #NotVipClient>
     You aren't a vip client, sorry!
 </ng-template>
+<br>
+<button (click)="ChangeVipStatus()">Change Vip Status</button>
+<br>
+<h2>Add Item List</h2>
+<label>Name</label>
+<br>
+<input [(ngModel)]="value.name" />
+<br>
+<label>Description</label>
+<br>
+<input [(ngModel)]="value.description" />
+<br>
 
-<button onclick="{isVipClient}">Change vip status</button>
+<button (click)="AddItem()">Add item</button>
