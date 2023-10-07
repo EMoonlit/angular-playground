@@ -15,3 +15,13 @@
 <label>Description</label>
 <br>
 <input [(ngModel)]="value.description" />
+<br>
+<div *ngIf="isVipClient; else NotVipClient">
+    <h1>Gratz! You are a vip client!</h1>
+</div>
+<br>
+<ng-template #NotVipClient>
+    You aren't a vip client, sorry!
+</ng-template>
+
+<button onclick="{isVipClient}">Change vip status</button>

@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-angular-app';
-  description1 = 'Description of item 1'
+  description1 = 'Description of item 1';
+  isVipClient = false;
 
   value: {
     description: string,

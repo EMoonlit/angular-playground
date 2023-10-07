@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ComponentModule } from 'src/components/component.module';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent
