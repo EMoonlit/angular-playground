@@ -10,13 +10,15 @@ import { ClientListPage } from 'src/pages/client-list-page.component';
 
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
+import { CustomUppercasePipe } from 'src/pipes/custom-uppercase.pipe';
 registerLocaleData(localePT);
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientListPage,
-    BindingPageComponent
+    BindingPageComponent,
+    CustomUppercasePipe
   ],
   imports: [
     BrowserModule,

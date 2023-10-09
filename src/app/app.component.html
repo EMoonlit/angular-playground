@@ -36,4 +36,4 @@
 
 <p>Data: {{dateToPipe | date:'long' : '' : 'pt-BR' | uppercase }} </p>
 <p>Currency: {{currencyValue | currency:'BRL'}}</p>
-<p>Custom uppercase pipe: {{values[0].name}}</p>
+<p>Custom uppercase pipe: {{values[0].name | appUpercase}}</p>
