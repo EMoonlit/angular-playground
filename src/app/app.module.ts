@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { BindingPageComponent } from 'src/pages/binding-page.component';
 import { ClientListPage } from 'src/pages/client-list-page.component';
 
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+registerLocaleData(localePT);
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { ClientListPage } from 'src/pages/client-list-page.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-br' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

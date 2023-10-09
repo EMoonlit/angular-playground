@@ -34,6 +34,7 @@ export class AppComponent {
   ]
 
   dateToPipe = Date.now();
+  currencyValue = 10.50;
 
   AddItem() {
     this.values.push({
