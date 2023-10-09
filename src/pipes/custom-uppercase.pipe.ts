@@ -5,11 +5,10 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class CustomUppercasePipe implements PipeTransform {
     transform(value: string, ...args: any[]) {
-        if (value) {
-            return value.toUpperCase();
-        }
+        if (!value) return value;
+        if (typeof value !== "string") throw new Error("invalid pipe argument")
 
-        return ""
+        return value.toUpperCase();
     }
 
 }
