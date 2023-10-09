@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClientService } from 'src/services/client.service';
 
 @Component({
   selector: 'app-root',
@@ -33,8 +34,13 @@ export class AppComponent {
     }
   ]
 
+  info = {};
   dateToPipe = Date.now();
   currencyValue = 10.50;
+
+
+  // Contructor
+  constructor(private clientService: ClientService) { }
 
   AddItem() {
     this.values.push({
@@ -47,4 +53,11 @@ export class AppComponent {
   ChangeVipStatus() {
     this.isVipClient = !this.isVipClient
   }
+
+  // IOC method
+  sayHello() {
+    alert(this.clientService.sayHello())
+  }
+
+
 }
