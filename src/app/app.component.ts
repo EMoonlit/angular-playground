@@ -33,6 +33,8 @@ export class AppComponent {
     }
   ]
 
+  dateToPipe = Date.now();
+
   AddItem() {
     this.values.push({
       description: this.value.description,
