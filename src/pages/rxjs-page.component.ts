@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {interval, of, Subscription} from "rxjs";
 
 @Component({
@@ -6,7 +6,7 @@ import {interval, of, Subscription} from "rxjs";
   templateUrl: './rxjs-page.component.html'
 })
 
-export class RxJsPageComponent implements OnInit {
+export class RxJsPageComponent implements OnInit, OnDestroy {
 
   items: Array<string> = []
   observableExOne = of('item 1')
@@ -25,9 +25,11 @@ export class RxJsPageComponent implements OnInit {
     this.subscription = this.observableExTwo.subscribe(n => this.numbers.push(n))
   }
 
-  unsubscribe() {
+  unsubscribe() :void {
     this.subscription.unsubscribe()
   }
 
-
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
+  }
 }
