@@ -7,6 +7,7 @@ import { ClientListPage } from 'src/pages/client-list-page.component';
 import { ClientDetailPageComponent } from 'src/pages/cliente-detail-page.component';
 import { FatherPageComponent } from 'src/pages/father.page.component';
 import { LoginPageComponent } from 'src/pages/login-page.component';
+import {RxJsPageComponent} from "../pages/rxjs-page.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
+  },
+  {
+    path: 'rxjs',
+    component: RxJsPageComponent,
   },
   {
     path: 'father',
