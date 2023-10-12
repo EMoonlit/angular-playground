@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from "@angular/core";
-import {filter, interval, map, of, range, Subscription, tap} from "rxjs";
+import {BehaviorSubject, filter, interval, map, of, range, Subscription, tap} from "rxjs";
 
 @Component({
   selector: 'app-rxjs',
@@ -18,24 +18,33 @@ export class RxJsPageComponent implements OnInit, OnDestroy {
 
   observableExThree = range(1, 10)
 
+  subject = new BehaviorSubject('Initial Value')
+  lastEvent = ""
+  count = 0
   constructor() {
   }
 
   ngOnInit() {
-    this.observableExOne.subscribe(i => this.items.push(i))
+    // this.observableExOne.subscribe(i => this.items.push(i))
+    //
+    // // this.subscription = this.observableExTwo.subscribe(n => this.numbers.push(n))
+    // this.subscription = this.observableExTwo
+    //   .pipe(
+    //     map(x => x * 3),
+    //     tap(x => console.log(x)),
+    //     filter(x => x % 2  === 0)
+    //   )
+    //   .subscribe(n => this.numbers.push(n))
+    //
+    // this.observableExThree.subscribe(
+    //   i => this.numbers.push(i)
+    // )
 
-    // this.subscription = this.observableExTwo.subscribe(n => this.numbers.push(n))
-    this.subscription = this.observableExTwo
-      .pipe(
-        map(x => x * 3),
-        tap(x => console.log(x)),
-        filter(x => x % 2  === 0)
+    this.subject
+      .asObservable()
+      .subscribe(
+        e => this.lastEvent = e
       )
-      .subscribe(n => this.numbers.push(n))
-
-    this.observableExThree.subscribe(
-      i => this.numbers.push(i)
-    )
   }
 
   unsubscribe() :void {
@@ -44,5 +53,10 @@ export class RxJsPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
+  }
+
+  emitEvent() {
+    this.subject.next("next item " + this.count)
+    this.count += 1
   }
 }

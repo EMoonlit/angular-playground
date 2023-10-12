@@ -7,7 +7,10 @@
     {{item}}
   </li>
 </ul>
-
+<button (click)="emitEvent()">Emit Event</button>
+<div>
+    Last Event: {{lastEvent}}
+</div>
 <button (click)="unsubscribe()">Unsubscribe</button>
 <p>Interval Observable</p>
 
@@ -16,3 +19,4 @@
     {{number}}
   </li>
 </ul>
+
