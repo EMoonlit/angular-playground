@@ -11,6 +11,9 @@ import { ClientListPage } from 'src/pages/client-list-page.component';
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { CustomUppercasePipe } from 'src/pipes/custom-uppercase.pipe';
+import { ChieldrenOnePageComponent } from 'src/pages/chieldren-2-page.component';
+import { ChieldrenTwoPageComponent } from 'src/pages/chieldren-1-page.component';
+import { FatherPageComponent } from 'src/pages/father.page.component';
 registerLocaleData(localePT);
 
 @NgModule({
@@ -18,7 +21,10 @@ registerLocaleData(localePT);
     AppComponent,
     ClientListPage,
     BindingPageComponent,
-    CustomUppercasePipe
+    CustomUppercasePipe,
+    FatherPageComponent,
+    ChieldrenOnePageComponent,
+    ChieldrenTwoPageComponent,
   ],
   imports: [
     BrowserModule,
