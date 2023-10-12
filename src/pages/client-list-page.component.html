@@ -1,5 +1,9 @@
 <h1>Guard Client List Component</h1>
 
 <ul *ngFor="let client of clients">
-    <li>{{client.id}} - {{client.name}}</li>
+    <li>
+        <a [routerLink]="['/client/detail', client.id]">
+            {{client.id}} - {{client.name}}
+        </a>
+    </li>
 </ul>
