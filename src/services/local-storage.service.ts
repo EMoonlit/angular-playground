@@ -1,18 +1,19 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class LocalStorageService {
-    constructor() { }
+  constructor() {
+  }
 
-    logIn() {
-        localStorage.setItem('isAdmin', 'true')
-    }
+  logIn() {
+    localStorage.setItem('isAdmin', 'true')
+  }
 
-    logOff() {
-        localStorage.removeItem('isAdmin')
-    }
+  logOff() {
+    localStorage.removeItem('isAdmin')
+  }
 
 }

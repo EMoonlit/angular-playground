@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ClientService } from 'src/services/client.service';
+import {Component} from '@angular/core';
+import {ClientService} from 'src/services/client.service';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +16,10 @@ export class AppComponent {
     name: string,
     id: number,
   } = {
-      description: '',
-      name: '',
-      id: 0
-    }
+    description: '',
+    name: '',
+    id: 0
+  }
 
   values = [
     {
@@ -40,7 +40,8 @@ export class AppComponent {
 
 
   // Contructor
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService) {
+  }
 
   AddItem() {
     this.values.push({

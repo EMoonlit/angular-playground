@@ -1,14 +1,15 @@
-import { Injectable } from "@angular/core";
+import {Injectable} from "@angular/core";
 
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ClientService {
-    constructor() { }
+  constructor() {
+  }
 
-    sayHello() {
-        return "Hello world!"
-    }
+  sayHello() {
+    return "Hello world!"
+  }
 
 }
