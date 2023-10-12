@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {interval, of} from "rxjs";
+import {interval, of, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-rxjs',
@@ -14,6 +14,7 @@ export class RxJsPageComponent implements OnInit {
   numbers: Array<number> = []
   observableExTwo = interval(1000)
 
+  subscription! : Subscription
 
   constructor() {
   }
@@ -21,6 +22,12 @@ export class RxJsPageComponent implements OnInit {
   ngOnInit() {
     this.observableExOne.subscribe(i => this.items.push(i))
 
-    this.observableExTwo.subscribe(n => this.numbers.push(n))
+    this.subscription = this.observableExTwo.subscribe(n => this.numbers.push(n))
   }
+
+  unsubscribe() {
+    this.subscription.unsubscribe()
+  }
+
+
 }
