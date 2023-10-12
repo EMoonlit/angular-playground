@@ -7,5 +7,15 @@ import { BrowserModule } from "@angular/platform-browser";
 })
 
 export class ClientListPage {
+    clients = [
+        {
+            id: 1,
+            name: 'Cliente One'
+        },
+        {
+            id: 2,
+            name: 'Client Two'
+        }
+    ]
     isVipClient = false;
 }

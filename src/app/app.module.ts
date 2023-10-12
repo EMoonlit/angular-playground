@@ -14,6 +14,7 @@ import { CustomUppercasePipe } from 'src/pipes/custom-uppercase.pipe';
 import { ChieldrenOnePageComponent } from 'src/pages/chieldren-2-page.component';
 import { ChieldrenTwoPageComponent } from 'src/pages/chieldren-1-page.component';
 import { FatherPageComponent } from 'src/pages/father.page.component';
+import { LoginPageComponent } from 'src/pages/login-page.component';
 registerLocaleData(localePT);
 
 @NgModule({
@@ -25,6 +26,7 @@ registerLocaleData(localePT);
     FatherPageComponent,
     ChieldrenOnePageComponent,
     ChieldrenTwoPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
